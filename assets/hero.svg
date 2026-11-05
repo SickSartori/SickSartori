@@ -6,14 +6,17 @@
 <radialGradient id="a1"><stop offset="0" stop-color="#ff2d2d" stop-opacity=".42"/><stop offset="1" stop-color="#ff2d2d" stop-opacity="0"/></radialGradient>
 <radialGradient id="a2"><stop offset="0" stop-color="#9b1c1c" stop-opacity=".5"/><stop offset="1" stop-color="#9b1c1c" stop-opacity="0"/></radialGradient>
 <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#3d141a" stroke-opacity=".6"/></pattern>
+<linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ef4444" stop-opacity="0"/><stop offset=".9" stop-color="#ef4444" stop-opacity=".22"/><stop offset="1" stop-color="#ef4444" stop-opacity=".5"/></linearGradient>
 <clipPath id="card"><rect width="884" height="210" rx="14"/></clipPath>
 </defs>
 <style>
-.a1{animation:d1 18s ease-in-out infinite alternate}
-.a2{animation:d2 22s ease-in-out infinite alternate}
-@keyframes d1{to{transform:translate(-90px,24px)}}
-@keyframes d2{to{transform:translate(110px,-20px)}}
-@media (prefers-reduced-motion:reduce){.a1,.a2{animation:none}}
+.a1{animation:d1 8s ease-in-out infinite alternate}
+.a2{animation:d2 10s ease-in-out infinite alternate}
+.w{animation:sweep 7s linear infinite}
+@keyframes d1{to{transform:translate(-190px,40px)}}
+@keyframes d2{to{transform:translate(210px,-40px)}}
+@keyframes sweep{from{transform:translateX(0)}to{transform:translateX(1024px)}}
+@media (prefers-reduced-motion:reduce){.a1,.a2,.w{animation:none}.w{display:none}}
 text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;fill:#d4b5b5}
 </style>
 <g clip-path="url(#card)">
@@ -21,6 +24,7 @@ text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:
 <rect width="884" height="210" fill="url(#grid)" opacity=".5"/>
 <circle class="a1" cx="744" cy="20" r="230" fill="url(#a1)"/>
 <circle class="a2" cx="140" cy="240" r="250" fill="url(#a2)"/>
+<rect class="w" x="-140" y="0" width="140" height="210" fill="url(#sw)"/>
 </g>
 <rect x=".5" y=".5" width="883" height="209" rx="14" fill="none" stroke="#3d141a"/>
 <text x="42" y="58">@SickSartori</text>

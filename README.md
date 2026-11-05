@@ -1,67 +1,41 @@
 <img alt="Gabriel Sartori, sviluppatore e collezionista di side project" src="assets/hero.svg" width="100%">
 
-Non c'è un filo conduttore: ogni tanto decido che *quella cosa* va rifatta meglio, e parte una nuova quest. Questa è la mia schermata di salvataggio.
+Ciao, sono Gabriel. Scrivo software e mi piace cominciare cose nuove: il port di un gioco, uno strumento per Windows, un programma per la fresatrice, un gioco scemo sui bug. Non c'è un filo conduttore, c'è la curiosità di vedere se si può fare. Uso soprattutto C++, TypeScript, JavaScript e .NET.
 
-## 🎮 Scheda personaggio
+## Cosa sto facendo
 
-| Stat | Valore |
-|---|---|
-| **Giocatore** | Gabriel, detto SickSartori |
-| **Classe** | Tinkerer (sviluppatore, esploratore seriale) |
-| **Specialità** | Port di giochi, estensioni di Windows, CAM, giochi satirici |
-| **Armi** | C++, TypeScript, JavaScript, .NET |
-| **Equipaggiamento** | Direct3D 11, XAudio2, XInput, resvg, three.js, Vite, Supabase, GitHub Actions |
-| **Difetto** | Ogni progetto ne genera altri tre |
+Questi sono i progetti pubblici, dal più recente.
 
-## 🗺️ Quest log
+### <img src="assets/icons/sm2port.svg" width="22" height="22" align="top" alt=""> [sm2port](https://github.com/SickSartori/sm2port) <sub>Spider-Man 2 su Windows</sub>
 
-### 🏎️ mc3port: Midnight Club 3 su Windows nativo
-`v0.3.0` · C++ · MIT · [Codice](https://github.com/SickSartori/mc3port) · [Release](https://github.com/SickSartori/mc3port/releases)
+Il più nuovo. È partito come fork di mc3port, perché è lo stesso tipo di lavoro. Il gioco gira dalla tua immagine disco, in 16:9, fino a 60 fps, con mouse e tastiera. È la versione 0.1.0, uscita il 5 novembre: l'ho provata per minuti, non per ore, quindi aspettati dei problemi, e se ne trovi uno [segnalameli](https://github.com/SickSartori/sm2port/issues).
 
-Port non ufficiale di *Midnight Club 3: DUB Edition Remix* (Xbox, PAL). Il codice x86 del gioco gira nativo sul PC, e mc3port rimpiazza la console intorno: kernel, GPU NV2A (su Direct3D 11), audio (su XAudio2) e controller (su XInput). Parte dalla **tua immagine disco**: nessun file di gioco incluso.
+### <img src="assets/icons/mc3port.svg" width="22" height="22" align="top" alt=""> [mc3port](https://github.com/SickSartori/mc3port) <sub>Midnight Club 3 su Windows</sub>
 
-💎 **Loot:** vero 16:9, 60 fps, risoluzione interna fino a 4K, effetti opzionali (F10 per confrontarli) e un launcher in italiano e inglese.
+Il codice del gioco gira nativo sul PC, e io rifaccio quello che c'era intorno: kernel della console, grafica, audio, controller. Ora siamo alla v0.3.0, con vero 16:9, 60 fps, risoluzione interna fino a 4K, effetti opzionali e un launcher in italiano e inglese.
 
-<sub>Progetto di fan non ufficiale, non affiliato a Rockstar, Take-Two o Microsoft.</sub>
+### <img src="assets/icons/carvecam.svg" width="22" height="22" align="top" alt=""> [CarveCAM](https://github.com/SickSartori/CarveCAM) <sub>un CAM per mini CNC, nel browser</sub>
 
-### 🖼️ svg-preview: miniature SVG in Esplora file
-`v2.0.1` · C++ · LGPL-3.0 · [Codice](https://github.com/SickSartori/svg-preview) · [Release](https://github.com/SickSartori/svg-preview/releases)
+Gli dai un modello 3D e ti restituisce il G-code: svuotatura a terrazze, finitura in proiezione, piani di lavoro inclinati, controllo collisioni e simulazione del taglio. Parla GRBL, LinuxCNC, Mach3/Mach4 e Fanuc. È ancora 0.x, quindi prima di lavorare un pezzo vero controlla sempre il G-code nel simulatore della tua macchina.
 
-Fork di *SVG Explorer Extension* di Tibold Kandrai, a cui va il merito dell'originale. Ho sostituito il motore QtSvg, che ignora `clipPath`, maschere e filtri, con **resvg**: gli SVG esportati da Illustrator, Affinity o Inkscape tornano a vedersi giusti. Una sola DLL di circa 3 MB, senza Qt da distribuire.
+### <img src="assets/icons/svg-preview.svg" width="22" height="22" align="top" alt=""> [svg-preview](https://github.com/SickSartori/svg-preview) <sub>le miniature SVG di Esplora file, fatte bene</sub>
 
-💎 **Loot:** `winget install SickSartori.SvgPreview`
+È un fork dell'estensione di Tibold Kandrai, a cui va il merito dell'originale. Il motore che usava ignorava `clipPath`, maschere e filtri, quindi molti SVG da Illustrator, Affinity o Inkscape si vedevano storti: l'ho sostituito con resvg. Si installa con `winget install SickSartori.SvgPreview`.
 
-### 🛠️ CarveCAM: CAM web per mini CNC
-`v0.4.0` · .NET + three.js · MIT · [Codice](https://github.com/SickSartori/CarveCAM) · [Scarica](https://github.com/SickSartori/CarveCAM/releases/latest)
+### <img src="assets/icons/espo-clicker.svg" width="22" height="22" align="top" alt=""> [espo-clicker](https://github.com/SickSartori/espo-clicker) <sub>il mio gioco scemo</sub>
 
-Dal modello 3D al G-code: svuotatura a terrazze, finitura in proiezione, piani di lavoro inclinati (3+2), controllo collisioni e simulazione del taglio con il grezzo che si consuma. Preset per GRBL (anche grblHAL e FluidNC), LinuxCNC, Mach3/Mach4 e Fanuc, con manuale e guida illustrata.
+Clicchi la faccia di Espòòò, un manager perennemente sorpreso, e i bug si risolvono. Poi tornano. Ci sono 11 team, 89 upgrade, 29 skin, 45 achievement e 6 minigiochi, in italiano e inglese. È il più vecchio dei miei progetti pubblici, da novembre 2025, e [si gioca qui](https://espooclicker.altervista.org).
 
-💎 **Loot:** un CAM leggero per hobbisti e piccole officine. È ancora versione 0.x: verifica sempre il G-code nel simulatore della tua macchina.
+<sub>mc3port e sm2port sono progetti di fan, non ufficiali e senza alcun file di gioco: serve la tua copia originale. Non sono affiliati a Rockstar, Take-Two, Marvel, Activision o Microsoft.</sub>
 
-### 🤡 espo-clicker: The Ultimate Bug-Farming Simulator
-`v3.2` · TypeScript · [▶︎ Gioca nel browser](https://espooclicker.altervista.org) · [Codice](https://github.com/SickSartori/espo-clicker)
-
-Idle game satirico sulla vita da sviluppatore: clicchi la faccia di Espòòò, il manager perennemente sorpreso, e i bug vengono risolti. Poi tornano. 11 team, 89 upgrade, 29 skin, 45 achievement e 6 minigiochi arcade, in italiano e inglese, installabile come PWA.
-
-💎 **Loot:** è il più vecchio dei miei repo pubblici: iniziato a novembre 2025.
-
-### ❓ sm2port: ???
-Quest sbloccata il 4 novembre 2026. Il repo è ancora vuoto: niente spoiler.
-
-## 📊 Statistiche di gioco
+## Quanto lavoro c'è dietro
 
 <img alt="I miei giorni di lavoro disegnati come una costellazione" src="assets/sky.svg" width="100%">
 
-<sub>Ogni stella è un giorno di lavoro, le linee uniscono le raffiche. Salvataggio automatico ogni giorno. Parte del lavoro vive in repo privati e compare solo come stelle.</sub>
+<sub>Ogni stella è un giorno in cui ho lavorato, e le linee uniscono i periodi di fila. Parte del lavoro sta in repo privati e compare solo come stelle. Il disegno si aggiorna da solo ogni giorno.</sub>
 
-**Velocità di sviluppo:** giorni tra un nuovo progetto pubblico e il successivo, 205, poi 108, poi 29, poi 9. Se la tendenza continua, il prossimo è già iniziato. *(Dati al 5 novembre 2026.)*
+Una cosa che ho notato guardando le date: i giorni tra un nuovo progetto pubblico e il successivo sono stati 205, poi 108, poi 29, poi 9. Non è un piano, succede. *(Dati al 5 novembre 2026.)*
 
-## 🏆 Achievement
+## Scrivimi
 
-🦈 **Pull Shark** · ⚡ **Quickdraw** · ❓ *il prossimo si sblocca da solo, di solito a mezzanotte.*
-
-## 🎧 Multiplayer
-
-Se hai un'idea strana, la party è aperta: scrivimi su [Discord](https://discord.com/users/381193306719125509).
-
-<sub>Insert coin to continue.</sub>
+Se hai un'idea strana, o un bug da segnalare, apri una issue nel repo giusto oppure scrivimi su [Discord](https://discord.com/users/381193306719125509).

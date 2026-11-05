@@ -54,9 +54,13 @@ for (const s of active) {
   if (run.length && s.i - run.at(-1).i > 3) clusters.push([]);
   clusters.at(-1).push(s);
 }
+// One path per cluster, drawn left to right (play once), so the constellations form one after another.
 const lines = clusters
   .filter((r) => r.length > 1)
-  .map((r) => "M" + r.map((s) => `${s.x.toFixed(1)} ${s.y.toFixed(1)}`).join("L"));
+  .map((r, k) => {
+    const d = "M" + r.map((s) => `${s.x.toFixed(1)} ${s.y.toFixed(1)}`).join("L");
+    return `<path class="l" pathLength="1" style="animation-delay:${(k * 0.35).toFixed(2)}s" d="${d}"/>`;
+  });
 
 let streak = 0, cur = 0;
 for (const d of days) streak = Math.max(streak, (cur = d.level ? cur + 1 : 0));
@@ -70,34 +74,57 @@ const R = [0, 1.6, 2.2, 3, 3.8];
 const FONT = `Inter,'Segoe UI',system-ui,-apple-system,sans-serif`; // single quotes: it lands inside style="..."
 const MONO = `ui-monospace,SFMono-Regular,Menlo,Consolas,monospace`;
 
+// A radar-like band that sweeps across the card; it makes the motion obvious at a glance.
+const sweep = (t) =>
+  `<linearGradient id="sw" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="${t.line}" stop-opacity="0"/><stop offset=".9" stop-color="${t.line}" stop-opacity=".22"/><stop offset="1" stop-color="${t.line}" stop-opacity=".5"/></linearGradient>`;
+
 const sky = (t) => {
+  // Each star twinkles at its own pace and phase.
+  const pulse = (s) => `animation-delay:-${(hash(`${s.date}t`) * 4).toFixed(2)}s;animation-duration:${(1.8 + hash(`${s.date}d`) * 2.4).toFixed(2)}s`;
   const dust = stars.filter((s) => !s.level).map((s) => `<circle class="d" cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r=".7"/>`);
-  const halos = active.filter((s) => s.level > 1).map((s) => `<circle cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${R[s.level] * 4}" fill="url(#halo)"/>`);
+  const halos = active
+    .filter((s) => s.level > 1)
+    .map((s) => `<circle class="h" cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${R[s.level] * 4}" fill="url(#halo)" style="${pulse(s)}"/>`);
   const dots = active.map(
-    (s) => `<circle class="s" cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${R[s.level]}" fill="${t.lv[s.level]}" style="animation-delay:-${(hash(`${s.date}t`) * 4).toFixed(2)}s"/>`,
+    (s) => `<circle class="s" cx="${s.x.toFixed(1)}" cy="${s.y.toFixed(1)}" r="${R[s.level]}" fill="${t.lv[s.level]}" style="${pulse(s)}"/>`,
   );
+  const meteor = (x, y, dur, delay) =>
+    `<line class="m" x1="${x}" y1="${y}" x2="${x + 64}" y2="${y + 36}" stroke="url(#tail)" stroke-width="1.8" stroke-linecap="round" style="animation-duration:${dur}s;animation-delay:-${delay}s"/>`;
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}">
 <title>${user}: ${total} contributions, drawn as a constellation</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t.bgA}"/><stop offset="1" stop-color="${t.bgB}"/></linearGradient>
 <radialGradient id="halo"><stop offset="0" stop-color="${t.lv[3]}" stop-opacity=".5"/><stop offset="1" stop-color="${t.lv[3]}" stop-opacity="0"/></radialGradient>
 <linearGradient id="tail" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="${t.lv[4]}" stop-opacity="0"/><stop offset="1" stop-color="${t.lv[4]}"/></linearGradient>
+${sweep(t)}
+<clipPath id="card"><rect width="${W}" height="${H}" rx="14"/></clipPath>
 </defs>
 <style>
 .d{fill:${t.dust};opacity:.35}
-.s{animation:tw 3s ease-in-out infinite alternate}
-.m{opacity:0;animation:fly 11s linear infinite}
+.l{fill:none;stroke:${t.line};stroke-opacity:.5;stroke-width:.9;stroke-linejoin:round;stroke-dasharray:1;animation:draw 1s ease-out both}
+.s{transform-box:fill-box;transform-origin:center;animation:tw 2.4s ease-in-out infinite alternate}
+.h{animation:glow 2.4s ease-in-out infinite alternate}
+.m{opacity:0;animation:fly 8s linear infinite}
+.w{animation:sweep 9s linear infinite}
 text{font:11px ${MONO};fill:${t.text}}
-@keyframes tw{from{opacity:.5}to{opacity:1}}
-@keyframes fly{0%{transform:translate(40px,10px);opacity:0}3%{opacity:1}9%{transform:translate(${W - 240}px,${H - 100}px);opacity:0}100%{transform:translate(${W - 240}px,${H - 100}px);opacity:0}}
-@media (prefers-reduced-motion:reduce){.s,.m{animation:none}.m{display:none}}
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+@keyframes tw{from{opacity:.15;transform:scale(.6)}to{opacity:1;transform:scale(1.25)}}
+@keyframes glow{from{opacity:.1}to{opacity:1}}
+@keyframes fly{0%{transform:translate(0,0);opacity:0}4%{opacity:1}14%{transform:translate(260px,110px);opacity:0}100%{transform:translate(260px,110px);opacity:0}}
+@keyframes sweep{from{transform:translateX(0)}to{transform:translateX(${W + 140}px)}}
+@media (prefers-reduced-motion:reduce){.l,.s,.h,.m,.w{animation:none}.m,.w{display:none}}
 </style>
 <rect x=".5" y=".5" width="${W - 1}" height="${H - 1}" rx="14" fill="url(#bg)" stroke="${t.edge}"/>
+<g clip-path="url(#card)">
 ${dust.join("\n")}
-<path d="${lines.join("")}" fill="none" stroke="${t.line}" stroke-opacity=".4" stroke-width=".9" stroke-linejoin="round"/>
+${lines.join("\n")}
 ${halos.join("\n")}
 ${dots.join("\n")}
-<line class="m" x1="0" y1="0" x2="64" y2="36" stroke="url(#tail)" stroke-width="1.6" stroke-linecap="round"/>
+<rect class="w" x="-140" y="0" width="140" height="${H}" fill="url(#sw)"/>
+${meteor(40, 6, 6.5, 1)}
+${meteor(Math.round(W * 0.42), 0, 8.5, 4.5)}
+${meteor(Math.round(W * 0.62), 4, 11, 7)}
+</g>
 <text x="${PAD}" y="${H - 14}">${total} contributions · ${active.length} active days · longest streak ${streak} days</text>
 </svg>
 `;
@@ -121,14 +148,17 @@ const hero = (t) => {
 <radialGradient id="a1"><stop offset="0" stop-color="${t.aur[0]}" stop-opacity=".42"/><stop offset="1" stop-color="${t.aur[0]}" stop-opacity="0"/></radialGradient>
 <radialGradient id="a2"><stop offset="0" stop-color="${t.aur[1]}" stop-opacity=".5"/><stop offset="1" stop-color="${t.aur[1]}" stop-opacity="0"/></radialGradient>
 <pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="${t.edge}" stroke-opacity=".6"/></pattern>
+${sweep(t)}
 <clipPath id="card"><rect width="${W}" height="210" rx="14"/></clipPath>
 </defs>
 <style>
-.a1{animation:d1 18s ease-in-out infinite alternate}
-.a2{animation:d2 22s ease-in-out infinite alternate}
-@keyframes d1{to{transform:translate(-90px,24px)}}
-@keyframes d2{to{transform:translate(110px,-20px)}}
-@media (prefers-reduced-motion:reduce){.a1,.a2{animation:none}}
+.a1{animation:d1 8s ease-in-out infinite alternate}
+.a2{animation:d2 10s ease-in-out infinite alternate}
+.w{animation:sweep 7s linear infinite}
+@keyframes d1{to{transform:translate(-190px,40px)}}
+@keyframes d2{to{transform:translate(210px,-40px)}}
+@keyframes sweep{from{transform:translateX(0)}to{transform:translateX(${W + 140}px)}}
+@media (prefers-reduced-motion:reduce){.a1,.a2,.w{animation:none}.w{display:none}}
 text{font-family:${MONO};font-size:13px;fill:${t.text}}
 </style>
 <g clip-path="url(#card)">
@@ -136,6 +166,7 @@ text{font-family:${MONO};font-size:13px;fill:${t.text}}
 <rect width="${W}" height="210" fill="url(#grid)" opacity=".5"/>
 <circle class="a1" cx="${W - 140}" cy="20" r="230" fill="url(#a1)"/>
 <circle class="a2" cx="140" cy="240" r="250" fill="url(#a2)"/>
+<rect class="w" x="-140" y="0" width="140" height="210" fill="url(#sw)"/>
 </g>
 <rect x=".5" y=".5" width="${W - 1}" height="209" rx="14" fill="none" stroke="${t.edge}"/>
 <text x="42" y="58">@${user}</text>
