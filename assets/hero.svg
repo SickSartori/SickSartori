@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884 210" width="884" height="210">
+<title>Gabriel Sartori, sviluppatore e collezionista di side project</title>
+<defs>
+<linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0b"/><stop offset="1" stop-color="#1c080b"/></linearGradient>
+<linearGradient id="ng" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ff3b3b"/><stop offset="1" stop-color="#ff7a59"/></linearGradient>
+<radialGradient id="a1"><stop offset="0" stop-color="#ff2d2d" stop-opacity=".42"/><stop offset="1" stop-color="#ff2d2d" stop-opacity="0"/></radialGradient>
+<radialGradient id="a2"><stop offset="0" stop-color="#9b1c1c" stop-opacity=".5"/><stop offset="1" stop-color="#9b1c1c" stop-opacity="0"/></radialGradient>
+<pattern id="grid" width="28" height="28" patternUnits="userSpaceOnUse"><path d="M28 0H0V28" fill="none" stroke="#3d141a" stroke-opacity=".6"/></pattern>
+<clipPath id="card"><rect width="884" height="210" rx="14"/></clipPath>
+</defs>
+<style>
+.a1{animation:d1 18s ease-in-out infinite alternate}
+.a2{animation:d2 22s ease-in-out infinite alternate}
+@keyframes d1{to{transform:translate(-90px,24px)}}
+@keyframes d2{to{transform:translate(110px,-20px)}}
+@media (prefers-reduced-motion:reduce){.a1,.a2{animation:none}}
+text{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;fill:#d4b5b5}
+</style>
+<g clip-path="url(#card)">
+<rect width="884" height="210" fill="url(#bg)"/>
+<rect width="884" height="210" fill="url(#grid)" opacity=".5"/>
+<circle class="a1" cx="744" cy="20" r="230" fill="url(#a1)"/>
+<circle class="a2" cx="140" cy="240" r="250" fill="url(#a2)"/>
+</g>
+<rect x=".5" y=".5" width="883" height="209" rx="14" fill="none" stroke="#3d141a"/>
+<text x="42" y="58">@SickSartori</text>
+<text x="40" y="108" style="font-family:Inter,'Segoe UI',system-ui,-apple-system,sans-serif;font-size:48px;font-weight:700;letter-spacing:-1px;fill:url(#ng)">Gabriel Sartori</text>
+<text x="42" y="138" style="font-family:Inter,'Segoe UI',system-ui,-apple-system,sans-serif;font-size:16px">Sviluppatore · collezionista di side project</text>
+<rect x="40" y="158" width="46" height="26" rx="13" fill="none" stroke="#ef4444" stroke-opacity=".45"/><text x="63" y="175" text-anchor="middle" style="font-size:12px">C++</text>
+<rect x="96" y="158" width="98" height="26" rx="13" fill="none" stroke="#ef4444" stroke-opacity=".45"/><text x="145" y="175" text-anchor="middle" style="font-size:12px">TypeScript</text>
+<rect x="204" y="158" width="98" height="26" rx="13" fill="none" stroke="#ef4444" stroke-opacity=".45"/><text x="253" y="175" text-anchor="middle" style="font-size:12px">JavaScript</text>
+<rect x="312" y="158" width="76" height="26" rx="13" fill="none" stroke="#ef4444" stroke-opacity=".45"/><text x="350" y="175" text-anchor="middle" style="font-size:12px">Windows</text>
+<rect x="398" y="158" width="46" height="26" rx="13" fill="none" stroke="#ef4444" stroke-opacity=".45"/><text x="421" y="175" text-anchor="middle" style="font-size:12px">CAM</text>
+</svg>

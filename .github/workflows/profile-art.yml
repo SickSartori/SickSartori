@@ -1,4 +1,4 @@
-name: toolpath
+name: profile-art
 
 on:
   schedule:
@@ -12,10 +12,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: node toolpath.mjs ${{ github.repository_owner }} assets
+      - uses: actions/checkout@v5
+      - run: node profile.mjs ${{ github.repository_owner }} assets
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets
-          git diff --cached --quiet || (git commit -m "Update toolpath" && git push)
+          git diff --cached --quiet || (git commit -m "Update profile art" && git push)
