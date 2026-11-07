@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884 214" width="884" height="214">
-<title>SickSartori: 1,778 contributions, drawn as a constellation</title>
+<title>SickSartori: 1,810 contributions, drawn as a constellation</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0b"/><stop offset="1" stop-color="#1c080b"/></linearGradient>
 <radialGradient id="halo"><stop offset="0" stop-color="#ff4d4d" stop-opacity=".5"/><stop offset="1" stop-color="#ff4d4d" stop-opacity="0"/></radialGradient>
@@ -300,7 +300,7 @@ text{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#d4b5b5
 <circle class="d" cx="807.5" cy="154.9" r=".7"/>
 <circle class="d" cx="823.5" cy="22.9" r=".7"/>
 <circle class="d" cx="823.4" cy="44.7" r=".7"/>
-<circle class="d" cx="854.5" cy="131.6" r=".7"/>
+<circle class="d" cx="854.8" cy="154.1" r=".7"/>
 <path class="l" pathLength="1" style="animation-delay:0.00s" d="M246.3 153.4L270.0 30.9L262.1 65.1L262.0 87.1L266.8 159.1"/>
 <path class="l" pathLength="1" style="animation-delay:0.35s" d="M310.9 44.0L314.6 70.7"/>
 <path class="l" pathLength="1" style="animation-delay:0.70s" d="M363.5 71.9L362.3 92.4"/>
@@ -312,7 +312,7 @@ text{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#d4b5b5
 <path class="l" pathLength="1" style="animation-delay:2.80s" d="M583.1 110.3L586.4 136.4L586.2 158.3L602.2 26.3L602.5 48.7L602.4 92.6"/>
 <path class="l" pathLength="1" style="animation-delay:3.15s" d="M730.1 114.1L730.5 136.6"/>
 <path class="l" pathLength="1" style="animation-delay:3.50s" d="M746.2 70.3L746.5 92.6L746.3 114.5L746.1 136.1L765.8 52.7L765.9 96.9L765.9 118.9L765.5 140.4L781.7 30.5L781.6 52.5L781.8 74.7L777.1 90.8L780.3 116.8L780.2 138.8L780.4 161.0L796.3 29.0L796.0 50.5L796.1 116.7"/>
-<path class="l" pathLength="1" style="animation-delay:3.85s" d="M829.1 74.0L829.3 96.1L829.5 118.4L829.2 140.0L829.4 162.3L845.6 30.4L845.3 52.1L845.5 74.3L845.1 96.0L845.3 118.1L840.6 134.3L841.0 156.7L854.7 21.9L854.8 43.9L854.6 65.8L854.6 87.8L854.4 109.6"/>
+<path class="l" pathLength="1" style="animation-delay:3.85s" d="M829.1 74.0L829.3 96.1L829.5 118.4L829.2 140.0L829.4 162.3L845.6 30.4L845.3 52.1L845.5 74.3L845.1 96.0L845.3 118.1L840.6 134.3L841.0 156.7L854.7 21.9L854.8 43.9L854.6 65.8L854.6 87.8L854.4 109.6L854.5 131.6"/>
 <circle class="h" cx="408.8" cy="90.4" r="12" fill="url(#halo)" style="animation-delay:-1.57s;animation-duration:2.59s"/>
 <circle class="h" cx="442.0" cy="136.1" r="8.8" fill="url(#halo)" style="animation-delay:-2.08s;animation-duration:3.20s"/>
 <circle class="h" cx="461.3" cy="52.2" r="8.8" fill="url(#halo)" style="animation-delay:-3.84s;animation-duration:3.95s"/>
@@ -444,10 +444,11 @@ text{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#d4b5b5
 <circle class="s" cx="854.6" cy="65.8" r="2.2" fill="#dc2626" style="animation-delay:-0.23s;animation-duration:4.19s"/>
 <circle class="s" cx="854.6" cy="87.8" r="2.2" fill="#dc2626" style="animation-delay:-0.26s;animation-duration:1.80s"/>
 <circle class="s" cx="854.4" cy="109.6" r="2.2" fill="#dc2626" style="animation-delay:-0.16s;animation-duration:2.05s"/>
+<circle class="s" cx="854.5" cy="131.6" r="1.6" fill="#b91c1c" style="animation-delay:-0.44s;animation-duration:1.92s"/>
 <rect class="w" x="-140" y="0" width="140" height="214" fill="url(#sw)"/>
 <line class="m" x1="40" y1="6" x2="104" y2="42" stroke="url(#tail)" stroke-width="1.8" stroke-linecap="round" style="animation-duration:6.5s;animation-delay:-1s"/>
 <line class="m" x1="371" y1="0" x2="435" y2="36" stroke="url(#tail)" stroke-width="1.8" stroke-linecap="round" style="animation-duration:8.5s;animation-delay:-4.5s"/>
 <line class="m" x1="548" y1="4" x2="612" y2="40" stroke="url(#tail)" stroke-width="1.8" stroke-linecap="round" style="animation-duration:11s;animation-delay:-7s"/>
 </g>
-<text x="26" y="200">1,778 contributions · 93 active days · longest streak 17 days</text>
+<text x="26" y="200">1,810 contributions · 94 active days · longest streak 18 days</text>
 </svg>
