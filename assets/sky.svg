@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 884 214" width="884" height="214">
-<title>SickSartori: 1,816 contributions, drawn as a constellation</title>
+<title>SickSartori: 1,831 contributions, drawn as a constellation</title>
 <defs>
 <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0a0b"/><stop offset="1" stop-color="#1c080b"/></linearGradient>
 <radialGradient id="halo"><stop offset="0" stop-color="#ff4d4d" stop-opacity=".5"/><stop offset="1" stop-color="#ff4d4d" stop-opacity="0"/></radialGradient>
@@ -305,7 +305,7 @@ text{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#d4b5b5
 <path class="l" pathLength="1" style="animation-delay:2.80s" d="M567.1 110.3L570.4 136.4L570.2 158.3L586.2 26.3L586.5 48.7L586.4 92.6"/>
 <path class="l" pathLength="1" style="animation-delay:3.15s" d="M714.1 114.1L714.5 136.6"/>
 <path class="l" pathLength="1" style="animation-delay:3.50s" d="M730.2 70.3L730.5 92.6L730.3 114.5L730.1 136.1L749.8 52.7L749.9 96.9L749.9 118.9L749.5 140.4L765.7 30.5L765.6 52.5L765.8 74.7L761.1 90.8L764.3 116.8L764.2 138.8L764.4 161.0L780.3 29.0L780.0 50.5L780.1 116.7"/>
-<path class="l" pathLength="1" style="animation-delay:3.85s" d="M813.1 74.0L813.3 96.1L813.5 118.4L813.2 140.0L813.4 162.3L829.6 30.4L829.3 52.1L829.5 74.3L829.1 96.0L829.3 118.1L824.6 134.3L825.0 156.7L838.7 21.9L838.8 43.9L838.6 65.8L838.6 87.8L838.4 109.6L838.5 131.6L854.9 22.1"/>
+<path class="l" pathLength="1" style="animation-delay:3.85s" d="M813.1 74.0L813.3 96.1L813.5 118.4L813.2 140.0L813.4 162.3L829.6 30.4L829.3 52.1L829.5 74.3L829.1 96.0L829.3 118.1L824.6 134.3L825.0 156.7L838.7 21.9L838.8 43.9L838.6 65.8L838.6 87.8L838.4 109.6L838.5 131.6L854.9 22.1L854.7 43.9"/>
 <circle class="h" cx="392.8" cy="90.4" r="12" fill="url(#halo)" style="animation-delay:-1.57s;animation-duration:2.59s"/>
 <circle class="h" cx="426.0" cy="136.1" r="8.8" fill="url(#halo)" style="animation-delay:-2.08s;animation-duration:3.20s"/>
 <circle class="h" cx="445.3" cy="52.2" r="8.8" fill="url(#halo)" style="animation-delay:-3.84s;animation-duration:3.95s"/>
@@ -344,6 +344,7 @@ text{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#d4b5b5
 <circle class="h" cx="838.6" cy="65.8" r="8.8" fill="url(#halo)" style="animation-delay:-0.23s;animation-duration:4.19s"/>
 <circle class="h" cx="838.6" cy="87.8" r="8.8" fill="url(#halo)" style="animation-delay:-0.26s;animation-duration:1.80s"/>
 <circle class="h" cx="838.4" cy="109.6" r="8.8" fill="url(#halo)" style="animation-delay:-0.16s;animation-duration:2.05s"/>
+<circle class="h" cx="854.9" cy="22.1" r="8.8" fill="url(#halo)" style="animation-delay:-0.26s;animation-duration:1.80s"/>
 <circle class="s" cx="43.2" cy="71.5" r="1.6" fill="#b91c1c" style="animation-delay:-2.79s;animation-duration:3.62s"/>
 <circle class="s" cx="230.3" cy="153.4" r="1.6" fill="#b91c1c" style="animation-delay:-0.19s;animation-duration:4.17s"/>
 <circle class="s" cx="254.0" cy="30.9" r="1.6" fill="#b91c1c" style="animation-delay:-3.91s;animation-duration:4.00s"/>
@@ -438,11 +439,12 @@ text{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#d4b5b5
 <circle class="s" cx="838.6" cy="87.8" r="2.2" fill="#dc2626" style="animation-delay:-0.26s;animation-duration:1.80s"/>
 <circle class="s" cx="838.4" cy="109.6" r="2.2" fill="#dc2626" style="animation-delay:-0.16s;animation-duration:2.05s"/>
 <circle class="s" cx="838.5" cy="131.6" r="1.6" fill="#b91c1c" style="animation-delay:-0.44s;animation-duration:1.92s"/>
-<circle class="s" cx="854.9" cy="22.1" r="1.6" fill="#b91c1c" style="animation-delay:-0.26s;animation-duration:1.80s"/>
+<circle class="s" cx="854.9" cy="22.1" r="2.2" fill="#dc2626" style="animation-delay:-0.26s;animation-duration:1.80s"/>
+<circle class="s" cx="854.7" cy="43.9" r="1.6" fill="#b91c1c" style="animation-delay:-0.16s;animation-duration:2.05s"/>
 <rect class="w" x="-140" y="0" width="140" height="214" fill="url(#sw)"/>
 <line class="m" x1="40" y1="6" x2="104" y2="42" stroke="url(#tail)" stroke-width="1.8" stroke-linecap="round" style="animation-duration:6.5s;animation-delay:-1s"/>
 <line class="m" x1="371" y1="0" x2="435" y2="36" stroke="url(#tail)" stroke-width="1.8" stroke-linecap="round" style="animation-duration:8.5s;animation-delay:-4.5s"/>
 <line class="m" x1="548" y1="4" x2="612" y2="40" stroke="url(#tail)" stroke-width="1.8" stroke-linecap="round" style="animation-duration:11s;animation-delay:-7s"/>
 </g>
-<text x="26" y="200">1,816 contributions · 95 active days · longest streak 18 days</text>
+<text x="26" y="200">1,831 contributions · 96 active days · longest streak 18 days</text>
 </svg>
