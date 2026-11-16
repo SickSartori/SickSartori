@@ -291,6 +291,7 @@ text{font:11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#d4b5b5
 <circle class="d" cx="843.2" cy="137.5" r=".7"/>
 <circle class="d" cx="843.2" cy="159.5" r=".7"/>
 <circle class="d" cx="859.4" cy="27.7" r=".7"/>
+<circle class="d" cx="859.3" cy="49.7" r=".7"/>
 <path class="l" pathLength="1" style="animation-delay:0.00s" d="M214.3 153.4L238.0 30.9L230.1 65.1L230.0 87.1L234.8 159.1"/>
 <path class="l" pathLength="1" style="animation-delay:0.35s" d="M278.9 44.0L282.6 70.7"/>
 <path class="l" pathLength="1" style="animation-delay:0.70s" d="M331.5 71.9L330.3 92.4"/>
